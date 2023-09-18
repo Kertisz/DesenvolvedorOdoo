@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_foreign_exch_rate_tree" model="ir.ui.view">
+            <field name="name">account.foreign.exchange.rate.tree</field>
+            <field name="model">account.foreign.exchange.rate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="currency_from_id"/>
+                    <field name="currency_to_id"/>
+                    <field name="exchange_rate"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_foreign_exch_rate" model="ir.actions.act_window">
+            <field name="name">Foreign Exchange Rates</field>
+            <field name="res_model">account.foreign.exchange.rate</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_account_foreign_exch_rate" name="Foreign Exchange Rates" parent="account.menu_finance" sequence="30" action="action_account_foreign_exch_rate"/>
+    </data>
+</odoo>
